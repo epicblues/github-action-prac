@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+ mysql-server:
+    image: mysql:8
+    environment:
+      - MYSQL_ROOT_PASSWORD=dev
+      - MYSQL_DATABASE=test # 데이터베이스 이름
+      - MYSQL_USER=dev # 생성된 데이터베이스의 super 권한을 가진 사용자 이름
+      - MYSQL_PASSWORD=dev
+
+    command:
+      - --character-set-server=utf8mb4 # 4바이트 유니코드(mysql에서 기본값은 3바이트), 이모지 같은 유니코드 문자도 활용하고 싶을 때
+      - --collation-server=utf8mb4_unicode_ci # 문자열 정렬 및 비교 방식
+    ports:
+      - 3306:3306 # 외부 포트(컨테이너의 내부 포트와 연결할 우리 시스템의 포트) : 내부 포트(이미지를 실행한 컨테이너가 개방한 포트, mysql 이미지에서는 3306)
+    cap_add:
+      - SYS_NICE 
+      # 컨테이너에 권한 부여
+        # 호출 프로세스에 대한 실시간 스케줄링 정책을 설정하고 임의 프로세스에 대한 스케줄링 정책 및 우선 순위를 설정한다.
+        # 임의 프로세스에 대한 CPU 선호도를 설정한다.
+        # 임의 프로세스에 대한 I/O 스케줄링 클래스 및 우선 순위를 설정한다.
+
