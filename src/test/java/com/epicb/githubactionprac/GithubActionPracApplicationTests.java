@@ -18,12 +18,12 @@ class GithubActionPracApplicationTests {
 
 	@Test
 	@Transactional
-	void contextLoads() {
+	void must_fail_test() {
 		var user = new User();
 		user.setName("hello");
 		user = repository.save(user);
 
-		assertThat(repository.findById(user.getId())).isNotNull().get().extracting("id").isEqualTo(1L);
+		assertThat(repository.findById(user.getId())).isNotNull().get().extracting("id").isEqualTo(55L);
 
 	}
 
