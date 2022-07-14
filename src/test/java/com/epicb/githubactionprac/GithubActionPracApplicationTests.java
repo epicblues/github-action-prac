@@ -23,7 +23,8 @@ class GithubActionPracApplicationTests {
 		user.setName("hello");
 		user = repository.save(user);
 
-		assertThat(repository.findById(user.getId())).isNotNull().get().extracting("id").isEqualTo(3L);
+		
+		assertThat(repository.findById(user.getId())).isNotNull().get().extracting("id").isEqualTo(7L);
 
 	}
 
