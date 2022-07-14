@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class GithubActionPracApplication {
 
 	public static void main(String[] args) {
-		// 
+		// 또바꾸기
 		SpringApplication.run(GithubActionPracApplication.class, args);
 	}
 
