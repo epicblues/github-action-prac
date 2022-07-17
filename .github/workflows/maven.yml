@@ -18,7 +18,7 @@ jobs:
       uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SSH_KEY }}
-        known_hosts: ec2-13-209-76-68.ap-northeast-2.compute.amazonaws.com
+        known_hosts: 13.209.76.68
         name: free-tier-practice.pem
       
     - name : ssh key test
