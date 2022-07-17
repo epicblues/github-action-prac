@@ -37,5 +37,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    
+      
+    - name : ssh key test
+      run: ssh -i ${{ secrets.SSH_KEY }} ubuntu@ec2-13-209-76-68.ap-northeast-2.compute.amazonaws.com ll
     
