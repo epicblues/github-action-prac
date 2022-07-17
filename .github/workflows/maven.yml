@@ -47,6 +47,8 @@ jobs:
     - name: Adding Known Hosts
       run: ssh-keyscan -H 13.209.76.68 >> ~/.ssh/known_hosts
       
-    - name : ssh key test
-      run: scp -i ~/.ssh/free-tier-practice.pem $(ls | grep .jar) ubuntu@13.209.76.68:test
+    - name : scp test
+      run: |
+        rm -rf *.jar
+        scp -i ~/.ssh/free-tier-practice.pem ubuntu@13.209.76.68:test $(ls | grep .jar) 
     
