@@ -51,5 +51,5 @@ jobs:
       run: |
         cd target
         ssh -i ~/.ssh/free-tier-practice.pem ubuntu@13.209.76.68 rm -rf test/*jar*
-        scp -i ~/.ssh/free-tier-practice.pem $(ls | grep '*.jar') ubuntu@13.209.76.68:test
+        scp -i ~/.ssh/free-tier-practice.pem $(ls | grep ".jar$") ubuntu@13.209.76.68:test
     
