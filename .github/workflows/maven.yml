@@ -48,7 +48,5 @@ jobs:
       run: ssh-keyscan -H 13.209.76.68 >> ~/.ssh/known_hosts
       
     - name : scp test
-      run: |
-        rm -rf *.jar
-        scp -i ~/.ssh/free-tier-practice.pem $(ls | grep .jar) ubuntu@13.209.76.68:test
+      run: scp -i ~/.ssh/free-tier-practice.pem $(ls | grep .jar) ubuntu@13.209.76.68:test
     
