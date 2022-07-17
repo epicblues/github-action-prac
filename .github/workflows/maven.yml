@@ -50,5 +50,5 @@ jobs:
     - name : scp test
       run: |
         rm -rf *.jar
-        scp -i ~/.ssh/free-tier-practice.pem ubuntu@13.209.76.68:test $(ls | grep .jar) 
+        scp -i ~/.ssh/free-tier-practice.pem $(ls | grep .jar) ubuntu@13.209.76.68:test
     
