@@ -18,9 +18,12 @@ jobs:
       uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SSH_KEY }}
-        known_hosts: 13.209.76.68
+        known_hosts: 'asdfasffsadf'
         name: free-tier-practice.pem
+        
+    - name: Adding Known Hosts
+      run: ssh-keyscan -H 13.209.76.68 >> ~/.ssh/known_hosts
       
     - name : ssh key test
-      run: ssh -i ~/.ssh/free-tier-practice.pem ubuntu@ec2-13-209-76-68.ap-northeast-2.compute.amazonaws.com ls
+      run: ssh -i ~/.ssh/free-tier-practice.pem ubuntu@13.209.76.68 ls
     
