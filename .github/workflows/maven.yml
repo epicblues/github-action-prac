@@ -22,5 +22,5 @@ jobs:
         name: free-tier-practice.pem
       
     - name : ssh key test
-      run: ssh -i ~/.ssh/free-tier-practice.pe ubuntu@ec2-13-209-76-68.ap-northeast-2.compute.amazonaws.com ll
+      run: ssh -i ~/.ssh/free-tier-practice.pe ubuntu@ec2-13-209-76-68.ap-northeast-2.compute.amazonaws.com ls
     
