@@ -15,8 +15,8 @@ jobs:
     - uses: actions/checkout@v3
       
     - name: add key in instance
-      run: echo '${{ secrets.SSH_KEY }}' >> ./aws.pem
+      run: echo '${{ secrets.SSH_KEY }}' >> ./free-tier-practice.pem
       
     - name : ssh key test
-      run: ssh -i ./aws.pem ubuntu@ec2-13-209-76-68.ap-northeast-2.compute.amazonaws.com ll
+      run: ssh -i ./free-tier-practice.pem ubuntu@ec2-13-209-76-68.ap-northeast-2.compute.amazonaws.com ll
     
