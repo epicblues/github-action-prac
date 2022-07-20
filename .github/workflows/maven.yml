@@ -50,6 +50,6 @@ jobs:
     - name : transfer jar file to ec2 instance
       run: |
         cd target
-        ssh -i ~/.ssh/free-tier-practice.pem ${{secrets.EC2_USERNAME}}@${{secrets.EC2_HOST}} 'bash -s' < server_script.sh
+        ssh -i ~/.ssh/free-tier-practice.pem ${{secrets.EC2_USERNAME}}@${{secrets.EC2_HOST}} 'bash -s' < ../server_script.sh
         scp -i ~/.ssh/free-tier-practice.pem $(ls | grep ".jar$") ${{secrets.EC2_USERNAME}}@${{secrets.EC2_HOST}}:test
     
