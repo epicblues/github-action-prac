@@ -43,13 +43,13 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         known_hosts: 'asdfasffsadf'
         name: free-tier-practice.pem
-        
+
     - name: Adding Known Hosts
       run: ssh-keyscan -H ${{secrets.EC2_HOST}} >> ~/.ssh/known_hosts
-      
+
     - name : transfer jar file to ec2 instance
       run: |
         cd target
-        ssh -i ~/.ssh/free-tier-practice.pem ${{secrets.EC2_USERNAME}}@${{secrets.EC2_HOST}} rm -rf test/*jar*
+        ssh -i ~/.ssh/free-tier-practice.pem ${{secrets.EC2_USERNAME}}@${{secrets.EC2_HOST}} 'bash -s' < ../server_script.sh
         scp -i ~/.ssh/free-tier-practice.pem $(ls | grep ".jar$") ${{secrets.EC2_USERNAME}}@${{secrets.EC2_HOST}}:test
     
